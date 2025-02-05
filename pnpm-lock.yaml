@@ -283,9 +283,6 @@ importers:
       '@elizaos/plugin-dexscreener':
         specifier: workspace:*
         version: link:../packages/plugin-dexscreener
-      '@elizaos/plugin-di':
-        specifier: workspace:*
-        version: link:../packages/plugin-di
       '@elizaos/plugin-dkg':
         specifier: workspace:*
         version: link:../packages/plugin-dkg
