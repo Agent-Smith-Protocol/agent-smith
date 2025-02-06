@@ -5,7 +5,7 @@ import { getWalletClient, getWalletProvider } from "./wallet";
 async function createGoatPlugin(
     getSetting: (key: string) => string | undefined
 ): Promise<Plugin> {
-    const walletClient = getWalletClient(getSetting);
+    const walletClient = await getWalletClient(getSetting);
     const actions = await getOnChainActions(walletClient);
 
     return {

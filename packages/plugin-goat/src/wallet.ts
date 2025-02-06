@@ -2,31 +2,25 @@ import type { WalletClientBase } from "@goat-sdk/core";
 import { viem } from "@goat-sdk/wallet-viem";
 import { createWalletClient, http } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { mode } from "viem/chains";
+import { safe, SafeWalletClient } from "@goat-sdk/wallet-safe";
+import { arbitrum } from "viem/chains";
 
 // Add the chain you want to use, remember to update also
 // the EVM_PROVIDER_URL to the correct one for the chain
-export const chain = mode;
+export const chain = arbitrum;
 
-export function getWalletClient(
+export async function getWalletClient(
     getSetting: (key: string) => string | undefined
 ) {
     const privateKey = getSetting("EVM_PRIVATE_KEY");
     if (!privateKey) return null;
 
-    const provider = getSetting("EVM_PROVIDER_URL");
-    if (!provider) throw new Error("EVM_PROVIDER_URL not configured");
+    const client = await safe(privateKey as `0x${string}`, arbitrum);
 
-    const wallet = createWalletClient({
-        account: privateKeyToAccount(privateKey as `0x${string}`),
-        chain: chain,
-        transport: http(provider),
-    });
-
-    return viem(wallet);
+    return client;
 }
 
-export function getWalletProvider(walletClient: WalletClientBase) {
+export function getWalletProvider(walletClient: SafeWalletClient) {
     return {
         async get(): Promise<string | null> {
             try {

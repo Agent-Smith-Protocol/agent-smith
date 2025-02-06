@@ -3,6 +3,10 @@ import { MODE, USDC, erc20 } from "@goat-sdk/plugin-erc20";
 import { kim } from "@goat-sdk/plugin-kim";
 import { sendETH } from "@goat-sdk/wallet-evm";
 import type { WalletClientBase } from "@goat-sdk/core";
+import {
+    sendTransaction,
+    sendBatchOfTransactions,
+} from "@goat-sdk/wallet-safe";
 
 import {
     generateText,
@@ -13,8 +17,9 @@ import {
     type State,
     composeContext,
 } from "@elizaos/core";
+import { SafeWalletClient } from "@goat-sdk/wallet-safe";
 
-export async function getOnChainActions(wallet: WalletClientBase) {
+export async function getOnChainActions(wallet: SafeWalletClient) {
     const actionsWithoutHandler = [
         {
             name: "SWAP_TOKENS",
@@ -29,7 +34,7 @@ export async function getOnChainActions(wallet: WalletClientBase) {
     const tools = await getOnChainTools({
         wallet: wallet,
         // 2. Configure the plugins you need to perform those actions
-        plugins: [sendETH(), erc20({ tokens: [USDC, MODE] }), kim()],
+        plugins: [sendTransaction(), sendBatchOfTransactions()],
     });
 
     // 3. Let GOAT handle all the actions
