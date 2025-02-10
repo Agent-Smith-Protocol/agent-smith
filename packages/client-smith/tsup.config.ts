@@ -15,5 +15,6 @@ export default defineConfig({
         "https",
         "http",
         "agentkeepalive",
+        // Add other modules you want to externalize
     ],
 });

@@ -11,6 +11,7 @@ import { SlackClientInterface } from "@elizaos/client-slack";
 import { TelegramClientInterface } from "@elizaos/client-telegram";
 import { TelegramAccountClientInterface } from "@elizaos/client-telegram-account";
 import { TwitterClientInterface } from "@elizaos/client-twitter";
+import { SmithClientInterface } from "@elizaos/client-smith";
 import { AlexaClientInterface } from "@elizaos/client-alexa";
 import { MongoDBDatabaseAdapter } from "@elizaos/adapter-mongodb";
 import { DevaClientInterface } from "@elizaos/client-deva";
@@ -52,7 +53,6 @@ import { footballPlugin } from "@elizaos/plugin-football";
 
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
 import { normalizeCharacter } from "@elizaos/plugin-di";
-import createGoatPlugin from "@elizaos/plugin-goat";
 import createZilliqaPlugin from "@elizaos/plugin-zilliqa";
 
 // import { intifacePlugin } from "@elizaos/plugin-intiface";
@@ -105,7 +105,6 @@ import { OpacityAdapter } from "@elizaos/plugin-opacity";
 import { openWeatherPlugin } from "@elizaos/plugin-open-weather";
 import { quaiPlugin } from "@elizaos/plugin-quai";
 import { sgxPlugin } from "@elizaos/plugin-sgx";
-import { solanaPlugin } from "@elizaos/plugin-solana";
 import { solanaAgentkitPlugin } from "@elizaos/plugin-solana-agent-kit";
 import { squidRouterPlugin } from "@elizaos/plugin-squid-router";
 import { stargazePlugin } from "@elizaos/plugin-stargaze";
@@ -115,7 +114,6 @@ import { TEEMode, teePlugin } from "@elizaos/plugin-tee";
 import { teeLogPlugin } from "@elizaos/plugin-tee-log";
 import { teeMarlinPlugin } from "@elizaos/plugin-tee-marlin";
 import { verifiableLogPlugin } from "@elizaos/plugin-tee-verifiable-log";
-import { tonPlugin } from "@elizaos/plugin-ton";
 import { webSearchPlugin } from "@elizaos/plugin-web-search";
 import { dkgPlugin } from "@elizaos/plugin-dkg";
 import { injectivePlugin } from "@elizaos/plugin-injective";
@@ -829,6 +827,13 @@ export async function initializeClients(
         }
     }
 
+    if (clientTypes.includes("smith")) {
+        const smithClient = await SmithClientInterface.start(runtime);
+        if (smithClient) {
+            clients.smith = smithClient;
+        }
+    }
+
     if (clientTypes.includes(Clients.ALEXA)) {
         const alexaClient = await AlexaClientInterface.start(runtime);
         if (alexaClient) {
@@ -934,14 +939,6 @@ export async function createAgent(
             "A WALLET_SECRET_SALT required when TEE_MODE is enabled"
         );
         throw new Error("Invalid TEE configuration");
-    }
-
-    let goatPlugin: any | undefined;
-
-    if (getSecret(character, "EVM_PRIVATE_KEY")) {
-        goatPlugin = await createGoatPlugin((secret) =>
-            getSecret(character, secret)
-        );
     }
 
     let zilliqaPlugin: any | undefined;
@@ -1128,14 +1125,13 @@ export async function createAgent(
             getSecret(character, "COINBASE_NOTIFICATION_URI")
                 ? webhookPlugin
                 : null,
-            goatPlugin,
+
             zilliqaPlugin,
             getSecret(character, "COINGECKO_API_KEY") ||
             getSecret(character, "COINGECKO_PRO_API_KEY")
                 ? coingeckoPlugin
                 : null,
             getSecret(character, "MORALIS_API_KEY") ? moralisPlugin : null,
-            getSecret(character, "EVM_PROVIDER_URL") ? goatPlugin : null,
             getSecret(character, "ABSTRACT_PRIVATE_KEY")
                 ? abstractPlugin
                 : null,
@@ -1162,7 +1158,6 @@ export async function createAgent(
                 ? cronosZkEVMPlugin
                 : null,
             getSecret(character, "TEE_MARLIN") ? teeMarlinPlugin : null,
-            getSecret(character, "TON_PRIVATE_KEY") ? tonPlugin : null,
             getSecret(character, "THIRDWEB_SECRET_KEY") ? thirdwebPlugin : null,
             getSecret(character, "SUI_PRIVATE_KEY") ? suiPlugin : null,
             getSecret(character, "STORY_PRIVATE_KEY") ? storyPlugin : null,

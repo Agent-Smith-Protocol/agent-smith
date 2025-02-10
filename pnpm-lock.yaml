@@ -169,6 +169,9 @@ importers:
       '@elizaos/client-slack':
         specifier: workspace:*
         version: link:../packages/client-slack
+      '@elizaos/client-smith':
+        specifier: workspace:*
+        version: link:../packages/client-smith
       '@elizaos/client-telegram':
         specifier: workspace:*
         version: link:../packages/client-telegram
@@ -184,21 +187,12 @@ importers:
       '@elizaos/core':
         specifier: workspace:*
         version: link:../packages/core
-      '@elizaos/plugin-0g':
-        specifier: workspace:*
-        version: link:../packages/plugin-0g
       '@elizaos/plugin-0x':
         specifier: workspace:*
         version: link:../packages/plugin-0x
       '@elizaos/plugin-3d-generation':
         specifier: workspace:*
         version: link:../packages/plugin-3d-generation
-      '@elizaos/plugin-abstract':
-        specifier: workspace:*
-        version: link:../packages/plugin-abstract
-      '@elizaos/plugin-agentkit':
-        specifier: workspace:*
-        version: link:../packages/plugin-agentkit
       '@elizaos/plugin-akash':
         specifier: workspace:*
         version: link:../packages/plugin-akash
@@ -208,42 +202,21 @@ importers:
       '@elizaos/plugin-ankr':
         specifier: workspace:*
         version: link:../packages/plugin-ankr
-      '@elizaos/plugin-aptos':
-        specifier: workspace:*
-        version: link:../packages/plugin-aptos
-      '@elizaos/plugin-arbitrage':
-        specifier: workspace:*
-        version: link:../packages/plugin-arbitrage
       '@elizaos/plugin-arthera':
         specifier: workspace:*
         version: link:../packages/plugin-arthera
       '@elizaos/plugin-autonome':
         specifier: workspace:*
         version: link:../packages/plugin-autonome
-      '@elizaos/plugin-avail':
-        specifier: workspace:*
-        version: link:../packages/plugin-avail
       '@elizaos/plugin-avalanche':
         specifier: workspace:*
         version: link:../packages/plugin-avalanche
       '@elizaos/plugin-b2':
         specifier: workspace:*
         version: link:../packages/plugin-b2
-      '@elizaos/plugin-binance':
-        specifier: workspace:*
-        version: link:../packages/plugin-binance
-      '@elizaos/plugin-birdeye':
-        specifier: workspace:*
-        version: link:../packages/plugin-birdeye
       '@elizaos/plugin-bittensor':
         specifier: workspace:*
         version: link:../packages/plugin-bittensor
-      '@elizaos/plugin-bnb':
-        specifier: workspace:*
-        version: link:../packages/plugin-bnb
-      '@elizaos/plugin-bootstrap':
-        specifier: workspace:*
-        version: link:../packages/plugin-bootstrap
       '@elizaos/plugin-chainbase':
         specifier: workspace:*
         version: link:../packages/plugin-chainbase
@@ -331,9 +304,6 @@ importers:
       '@elizaos/plugin-gitcoin-passport':
         specifier: workspace:*
         version: link:../packages/plugin-gitcoin-passport
-      '@elizaos/plugin-goat':
-        specifier: workspace:*
-        version: link:../packages/plugin-goat
       '@elizaos/plugin-holdstation':
         specifier: workspace:*
         version: link:../packages/plugin-holdstation
@@ -358,9 +328,6 @@ importers:
       '@elizaos/plugin-injective':
         specifier: workspace:*
         version: link:../packages/plugin-injective
-      '@elizaos/plugin-intiface':
-        specifier: workspace:*
-        version: link:../packages/plugin-intiface
       '@elizaos/plugin-iq6900':
         specifier: workspace:*
         version: link:../packages/plugin-iq6900
@@ -391,12 +358,6 @@ importers:
       '@elizaos/plugin-movement':
         specifier: workspace:*
         version: link:../packages/plugin-movement
-      '@elizaos/plugin-multiversx':
-        specifier: workspace:*
-        version: link:../packages/plugin-multiversx
-      '@elizaos/plugin-near':
-        specifier: workspace:*
-        version: link:../packages/plugin-near
       '@elizaos/plugin-news':
         specifier: workspace:*
         version: link:../packages/plugin-news
@@ -457,9 +418,6 @@ importers:
       '@elizaos/plugin-squid-router':
         specifier: workspace:*
         version: link:../packages/plugin-squid-router
-      '@elizaos/plugin-stargaze':
-        specifier: workspace:*
-        version: link:../packages/plugin-stargaze
       '@elizaos/plugin-starknet':
         specifier: workspace:*
         version: link:../packages/plugin-starknet
@@ -505,15 +463,9 @@ importers:
       '@elizaos/plugin-web-search':
         specifier: workspace:*
         version: link:../packages/plugin-web-search
-      '@elizaos/plugin-zerion':
-        specifier: workspace:*
-        version: link:../packages/plugin-zerion
       '@elizaos/plugin-zilliqa':
         specifier: workspace:*
         version: link:../packages/plugin-zilliqa
-      '@elizaos/plugin-zksync-era':
-        specifier: workspace:*
-        version: link:../packages/plugin-zksync-era
       readline:
         specifier: 1.3.0
         version: 1.3.0
@@ -1244,6 +1196,34 @@ importers:
       vitest:
         specifier: ^3.0.0
         version: 3.0.5(@types/debug@4.1.12)(@types/node@18.19.74)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.5))(terser@5.37.0)
+
+  packages/client-smith:
+    dependencies:
+      '@elizaos/core':
+        specifier: workspace:*
+        version: link:../core
+      glob:
+        specifier: 11.0.0
+        version: 11.0.0
+      viem:
+        specifier: 2.21.58
+        version: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
+      whatwg-url:
+        specifier: 7.1.0
+        version: 7.1.0
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
+    devDependencies:
+      '@vitest/coverage-v8':
+        specifier: 1.1.3
+        version: 1.1.3(vitest@1.6.1(@types/node@22.12.0)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.5))(terser@5.37.0))
+      tsup:
+        specifier: 8.3.5
+        version: 8.3.5(@swc/core@1.10.12(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.5.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
+      vitest:
+        specifier: 1.6.1
+        version: 1.6.1(@types/node@22.12.0)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.5))(terser@5.37.0)
 
   packages/client-telegram:
     dependencies:
@@ -3022,43 +3002,6 @@ importers:
       '@elizaos/core':
         specifier: workspace:*
         version: link:../core
-      tsup:
-        specifier: 8.3.5
-        version: 8.3.5(@swc/core@1.10.12(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.5.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
-      whatwg-url:
-        specifier: 7.1.0
-        version: 7.1.0
-    devDependencies:
-      '@biomejs/biome':
-        specifier: 1.9.4
-        version: 1.9.4
-
-  packages/plugin-goat:
-    dependencies:
-      '@elizaos/core':
-        specifier: workspace:*
-        version: link:../core
-      '@goat-sdk/adapter-vercel-ai':
-        specifier: 0.2.0
-        version: 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(ai@4.1.16(react@19.0.0)(zod@3.23.8))
-      '@goat-sdk/core':
-        specifier: 0.4.6
-        version: 0.4.6(zod@3.23.8)
-      '@goat-sdk/plugin-erc20':
-        specifier: 0.2.2
-        version: 0.2.2(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))
-      '@goat-sdk/plugin-kim':
-        specifier: 0.1.2
-        version: 0.1.2(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))
-      '@goat-sdk/wallet-evm':
-        specifier: 0.2.0
-        version: 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)
-      '@goat-sdk/wallet-safe':
-        specifier: 0.1.1
-        version: 0.1.1(@goat-sdk/core@0.4.6(zod@3.23.8))(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))(webauthn-p256@0.0.10)(zod@3.23.8)
-      '@goat-sdk/wallet-viem':
-        specifier: 0.2.0
-        version: 0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))
       tsup:
         specifier: 8.3.5
         version: 8.3.5(@swc/core@1.10.12(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.5.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
@@ -8672,12 +8615,6 @@ packages:
   '@gerrit0/mini-shiki@1.27.2':
     resolution: {integrity: sha512-GeWyHz8ao2gBiUW4OJnQDxXQnFgZQwwQk05t/CVVgNBN7/rK8XZ7xY6YhLVv9tH3VppWWmr9DCl3MwemB/i+Og==}
 
-  '@goat-sdk/adapter-vercel-ai@0.2.0':
-    resolution: {integrity: sha512-NqUyO38i6ELbWXSDHddfkD1k4QCUcvfs3jVQArlJ9OO9NSlkKvnbZjO1tTjoVoERjRKfKsCqfMPgsgo3akx7tA==}
-    peerDependencies:
-      '@goat-sdk/core': 0.4.0
-      ai: 4.0.3
-
   '@goat-sdk/adapter-vercel-ai@0.2.7':
     resolution: {integrity: sha512-y6W7ZOpe4bh7PiafzcY87RsgbVBr6ESKGdxLbJ1bQNbm/6DPJyXC8lpRi4zy+OOzbHtwupCl50w7jteJuwf6XA==}
     peerDependencies:
@@ -8707,18 +8644,6 @@ packages:
       '@goat-sdk/core': 0.3.8
       viem: 2.21.58
 
-  '@goat-sdk/plugin-erc20@0.2.2':
-    resolution: {integrity: sha512-uobj8A2GRAHAU8PNY9Be0iA8p+311zRDIRKHRQX0uooCWD4CxD6iMj99Q4RvBl8Es+Kc7JMQPRoZzMLawJUSJw==}
-    peerDependencies:
-      '@goat-sdk/core': 0.4.0
-      viem: 2.21.58
-
-  '@goat-sdk/plugin-kim@0.1.2':
-    resolution: {integrity: sha512-jZ7PTjGk7LPGAmMflhAieZsE0Q28TWinNNuDnljrp6NdfjrLK3wLOQB9syWyFHDCsa+RiddSVjr1ZQJkPFhfKw==}
-    peerDependencies:
-      '@goat-sdk/core': 0.4.0
-      viem: 2.21.58
-
   '@goat-sdk/plugin-zilliqa@0.1.3':
     resolution: {integrity: sha512-O2JRtvB4uhflMWniO2K5FhYJW4fBICyOeC5TKXqkybk/pwBUZ8w3v4nnIrveA7BZPbd1XXqD3Hoif+ZXRPaNng==}
     peerDependencies:
@@ -8727,34 +8652,16 @@ packages:
       '@goat-sdk/wallet-zilliqa': 0.2.6
       viem: 2.21.58
 
-  '@goat-sdk/wallet-evm@0.2.0':
-    resolution: {integrity: sha512-w/sWi7WHsTz8G+jNWI0xJ+l4wWOVFrSxh7PHfYOEZQyFexOioEdEG5QGYkgYT3/VoYApsx9G1H8itKxs1Mg5Mw==}
-    peerDependencies:
-      '@goat-sdk/core': 0.4.0
-
   '@goat-sdk/wallet-evm@0.2.6':
     resolution: {integrity: sha512-KzC2jbfGi0CsVLLWyvxQheFWNuKMKiafgjyGVufK0j6aa0fY34tx4aTXka6yavY14fZDeZFlJmPAjzPhMZmXXA==}
     peerDependencies:
       '@goat-sdk/core': 0.4.6
-
-  '@goat-sdk/wallet-safe@0.1.1':
-    resolution: {integrity: sha512-TEyovom27ZFz4hv+a/Lhb7UgzxNZz4KMkTwEiyhjp/AygcwfWAOkBUokJOOHJVKy3vL4colcACuqutJcT4Zokg==}
-    peerDependencies:
-      '@goat-sdk/core': 0.4.7
-      '@goat-sdk/wallet-evm': 0.2.8
-      viem: 2.21.58
 
   '@goat-sdk/wallet-viem@0.1.3':
     resolution: {integrity: sha512-2uofsH/dVmeJk/4V2/tJ1rDk6/ZFQlthUO50tg366hjq0vjINJXMQqYGwSLnv5Z3PMmdfPCSd5xikFEfA+1ZZw==}
     engines: {node: '>=20.12.2 <21', npm: please-use-pnpm, pnpm: '>=9', yarn: please-use-pnpm}
     peerDependencies:
       '@goat-sdk/core': 0.3.4
-      viem: 2.21.58
-
-  '@goat-sdk/wallet-viem@0.2.0':
-    resolution: {integrity: sha512-x9FTUg9/ZhJyx8tQMAuIGmoFfRkmyDge78yvd9CTK6SQTiYQ/Hio7rAmHjLE95lElXb6EumZu7R0IlX3m/SGSw==}
-    peerDependencies:
-      '@goat-sdk/wallet-evm': 0.2.0
       viem: 2.21.58
 
   '@goat-sdk/wallet-viem@0.2.6':
@@ -12062,22 +11969,6 @@ packages:
     peerDependencies:
       '@solana/web3.js': npm:@solana/web3.js@1.95.5
       bn.js: ^4 || ^5
-
-  '@safe-global/protocol-kit@5.2.1':
-    resolution: {integrity: sha512-7jY+p2+GQU9FPKMMgHDr32gPC/1BKtYVzvQHniZuPSJVcb26E0CBwZb7IUyRiUd+kJN8OF13zRFbhQdH99Akhw==}
-
-  '@safe-global/safe-core-sdk-types@5.1.0':
-    resolution: {integrity: sha512-UzXR4zWmVzux25FcIm4H049QhZZpVpIBL5HE+V0p5gHpArZROL+t24fZmsKUf403CtBxIJM5zZSVQL0nFJi+IQ==}
-    deprecated: 'WARNING: This project has been renamed to @safe-global/types-kit. Please, migrate from @safe-global/safe-core-sdk-types@5.1.0 to @safe-global/types-kit@1.0.0.'
-
-  '@safe-global/safe-deployments@1.37.27':
-    resolution: {integrity: sha512-0r/BzntT/XUPlca11obF1Zog1m8jLSGVbb97FqxnjaEzqWf+N7dBwAYJ9Voq3e7hlqpcVLMh3O6VDAf4y+5ndg==}
-
-  '@safe-global/safe-modules-deployments@2.2.5':
-    resolution: {integrity: sha512-rkKqj6gGKokjBX2JshH1EwjPkzFD14oOk2vY3LSxKhpkQyjdqxcj+OlWkjzpi613HzCtxY0mHgMiyLID7nzueA==}
-
-  '@safe-global/types-kit@1.0.2':
-    resolution: {integrity: sha512-KiRlU1nlWuj4Qr+nLxgO/yRpJamVUOonnAkLrSMrzfGwXcfLWXJJtoD9sv/pvTIHMWSOlzgkrc1KXqY3K68SGg==}
 
   '@sapphire/async-queue@1.5.5':
     resolution: {integrity: sha512-cvGzxbba6sav2zZkH8GPf2oGk9yYoD5qrNWdu9fRehifgnFZJMV+nuy2nON2roRO4yQQ+v7MK/Pktl/HgfsUXg==}
@@ -22819,12 +22710,6 @@ packages:
 
   performance-now@2.1.0:
     resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
-
-  permissionless@0.2.28:
-    resolution: {integrity: sha512-LW7xO9+88aIvCbNktQnY69mZGu7fghuKBKXbEV+sQc1oc62AsbUNUOvAU9SLRByaljrcdC3lJAMGt0kExiGktw==}
-    peerDependencies:
-      viem: 2.21.58
-      webauthn-p256: 0.0.10
 
   pg-cloudflare@1.1.1:
     resolution: {integrity: sha512-xWPagP/4B6BgFO+EKz3JONXv3YDgvkbVrGw2mTo3D6tVDQRh1e7cqVGvyR3BE+eQgAvx1XhW/iEASj4/jCWl3Q==}
@@ -34733,12 +34618,6 @@ snapshots:
       '@shikijs/types': 1.29.1
       '@shikijs/vscode-textmate': 10.0.1
 
-  '@goat-sdk/adapter-vercel-ai@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(ai@4.1.16(react@19.0.0)(zod@3.23.8))':
-    dependencies:
-      '@goat-sdk/core': 0.4.6(zod@3.23.8)
-      ai: 4.1.16(react@19.0.0)(zod@3.23.8)
-      zod: 3.23.8
-
   '@goat-sdk/adapter-vercel-ai@0.2.7(@goat-sdk/core@0.4.6(zod@3.23.8))(ai@4.1.16(react@19.0.0)(zod@3.23.8))(zod@3.23.8)':
     dependencies:
       '@goat-sdk/core': 0.4.6(zod@3.23.8)
@@ -34774,28 +34653,6 @@ snapshots:
       viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.23.8)
       zod: 3.23.8
 
-  '@goat-sdk/plugin-erc20@0.2.2(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))':
-    dependencies:
-      '@goat-sdk/core': 0.4.6(zod@3.23.8)
-      '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
-      zod: 3.23.8
-    transitivePeerDependencies:
-      - bufferutil
-      - typescript
-      - utf-8-validate
-
-  '@goat-sdk/plugin-kim@0.1.2(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))':
-    dependencies:
-      '@goat-sdk/core': 0.4.6(zod@3.23.8)
-      '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
-      zod: 3.23.8
-    transitivePeerDependencies:
-      - bufferutil
-      - typescript
-      - utf-8-validate
-
   '@goat-sdk/plugin-zilliqa@0.1.3(@goat-sdk/core@0.4.6(zod@3.23.8))(@goat-sdk/wallet-evm@0.2.6(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(@goat-sdk/wallet-zilliqa@0.2.6(@goat-sdk/core@0.4.6(zod@3.23.8))(@goat-sdk/wallet-evm@0.2.6(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(@goat-sdk/wallet-viem@0.2.6(@goat-sdk/wallet-evm@0.2.6(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)))(bufferutil@4.0.9)(encoding@0.1.13)(typescript@5.7.3)(utf-8-validate@6.0.5))(encoding@0.1.13)(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))':
     dependencies:
       '@goat-sdk/core': 0.4.6(zod@3.23.8)
@@ -34810,17 +34667,6 @@ snapshots:
       - encoding
       - supports-color
 
-  '@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)':
-    dependencies:
-      '@goat-sdk/core': 0.4.6(zod@3.23.8)
-      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
-      zod: 3.23.8
-    transitivePeerDependencies:
-      - bufferutil
-      - typescript
-      - utf-8-validate
-
   '@goat-sdk/wallet-evm@0.2.6(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)':
     dependencies:
       '@goat-sdk/core': 0.4.6(zod@3.23.8)
@@ -34832,30 +34678,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@goat-sdk/wallet-safe@0.1.1(@goat-sdk/core@0.4.6(zod@3.23.8))(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))(webauthn-p256@0.0.10)(zod@3.23.8)':
-    dependencies:
-      '@goat-sdk/core': 0.4.6(zod@3.23.8)
-      '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)
-      '@safe-global/protocol-kit': 5.2.1(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
-      '@safe-global/safe-core-sdk-types': 5.1.0(typescript@5.7.3)(zod@3.23.8)
-      permissionless: 0.2.28(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))(webauthn-p256@0.0.10)
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
-    transitivePeerDependencies:
-      - bufferutil
-      - typescript
-      - utf-8-validate
-      - webauthn-p256
-      - zod
-
   '@goat-sdk/wallet-viem@0.1.3(@goat-sdk/core@0.3.8(bufferutil@4.0.9)(encoding@0.1.13)(typescript@5.7.3)(utf-8-validate@5.0.10))(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.23.8))':
     dependencies:
       '@goat-sdk/core': 0.3.8(bufferutil@4.0.9)(encoding@0.1.13)(typescript@5.7.3)(utf-8-validate@5.0.10)
       viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.23.8)
-
-  '@goat-sdk/wallet-viem@0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))':
-    dependencies:
-      '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
 
   '@goat-sdk/wallet-viem@0.2.6(@goat-sdk/wallet-evm@0.2.6(@goat-sdk/core@0.4.6(zod@3.23.8))(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5))(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))':
     dependencies:
@@ -42490,43 +42316,6 @@ snapshots:
       tiny-invariant: 1.3.3
       tslib: 2.8.1
 
-  '@safe-global/protocol-kit@5.2.1(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)':
-    dependencies:
-      '@safe-global/safe-deployments': 1.37.27
-      '@safe-global/safe-modules-deployments': 2.2.5
-      '@safe-global/types-kit': 1.0.2(typescript@5.7.3)(zod@3.23.8)
-      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
-      semver: 7.7.0
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
-    optionalDependencies:
-      '@noble/curves': 1.8.1
-      '@peculiar/asn1-schema': 2.3.15
-    transitivePeerDependencies:
-      - bufferutil
-      - typescript
-      - utf-8-validate
-      - zod
-
-  '@safe-global/safe-core-sdk-types@5.1.0(typescript@5.7.3)(zod@3.23.8)':
-    dependencies:
-      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
-    transitivePeerDependencies:
-      - typescript
-      - zod
-
-  '@safe-global/safe-deployments@1.37.27':
-    dependencies:
-      semver: 7.7.0
-
-  '@safe-global/safe-modules-deployments@2.2.5': {}
-
-  '@safe-global/types-kit@1.0.2(typescript@5.7.3)(zod@3.23.8)':
-    dependencies:
-      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
-    transitivePeerDependencies:
-      - typescript
-      - zod
-
   '@sapphire/async-queue@1.5.5': {}
 
   '@sapphire/shapeshift@4.0.0':
@@ -48026,6 +47815,11 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.3
       zod: 3.24.1
+
+  abitype@1.0.8(typescript@5.7.3)(zod@3.22.4):
+    optionalDependencies:
+      typescript: 5.7.3
+      zod: 3.22.4
 
   abitype@1.0.8(typescript@5.7.3)(zod@3.23.8):
     optionalDependencies:
@@ -59375,11 +59169,11 @@ snapshots:
   ox@0.4.4(typescript@4.9.5)(zod@3.24.1):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
-      '@scure/bip32': 1.6.0
-      '@scure/bip39': 1.5.0
-      abitype: 1.0.7(typescript@4.9.5)(zod@3.24.1)
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@4.9.5)(zod@3.24.1)
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 4.9.5
@@ -59389,11 +59183,11 @@ snapshots:
   ox@0.4.4(typescript@5.6.3)(zod@3.24.1):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
-      '@scure/bip32': 1.6.0
-      '@scure/bip39': 1.5.0
-      abitype: 1.0.7(typescript@5.6.3)(zod@3.24.1)
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.6.3)(zod@3.24.1)
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 5.6.3
@@ -59403,11 +59197,11 @@ snapshots:
   ox@0.4.4(typescript@5.7.3)(zod@3.22.4):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
-      '@scure/bip32': 1.6.0
-      '@scure/bip39': 1.5.0
-      abitype: 1.0.7(typescript@5.7.3)(zod@3.22.4)
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.7.3)(zod@3.22.4)
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 5.7.3
@@ -59417,11 +59211,11 @@ snapshots:
   ox@0.4.4(typescript@5.7.3)(zod@3.23.8):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
-      '@scure/bip32': 1.6.0
-      '@scure/bip39': 1.5.0
-      abitype: 1.0.7(typescript@5.7.3)(zod@3.23.8)
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 5.7.3
@@ -59431,11 +59225,11 @@ snapshots:
   ox@0.4.4(typescript@5.7.3)(zod@3.24.1):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
-      '@scure/bip32': 1.6.0
-      '@scure/bip39': 1.5.0
-      abitype: 1.0.7(typescript@5.7.3)(zod@3.24.1)
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.7.3)(zod@3.24.1)
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 5.7.3
@@ -59805,11 +59599,6 @@ snapshots:
   perfect-debounce@1.0.0: {}
 
   performance-now@2.1.0: {}
-
-  permissionless@0.2.28(viem@2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))(webauthn-p256@0.0.10):
-    dependencies:
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
-      webauthn-p256: 0.0.10
 
   pg-cloudflare@1.1.1:
     optional: true
@@ -66712,8 +66501,8 @@ snapshots:
 
   webauthn-p256@0.0.10:
     dependencies:
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
 
   webcrypto-core@1.8.1:
     dependencies:
